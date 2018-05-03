@@ -26,6 +26,9 @@
                                 <rect key="frame" x="146" y="617" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="switch units"/>
+                                <connections>
+                                    <action selector="switchUnitsButtonPressed:" destination="wHi-3y-d44" eventType="touchUpInside" id="BBc-Rq-cwh"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" horizontalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-bG-Dqc">
                                 <rect key="frame" x="27" y="244" width="320" height="311"/>
@@ -56,7 +59,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVT-Gz-379" sceneMemberID="firstResponder"/>
                 <customObject id="B7K-at-qvs" customClass="FahrenheitViewModel" customModule="Temperature_Converter" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="924" y="62"/>
+            <point key="canvasLocation" x="1188" y="62"/>
         </scene>
         <!--Celsius To Fahrenheit-->
         <scene sceneID="PSG-XB-Gn9">
@@ -74,6 +77,9 @@
                                 <rect key="frame" x="146" y="617" width="82" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="switch units"/>
+                                <connections>
+                                    <segue destination="wHi-3y-d44" kind="show" action="showDetailViewController:sender:" id="psm-q5-IgA"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" horizontalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-Rx-3q5">
                                 <rect key="frame" x="27" y="244" width="320" height="311"/>
@@ -104,7 +110,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aW0-1N-7If" sceneMemberID="firstResponder"/>
                 <customObject id="k0y-A2-5PK" customClass="CelsiusViewModel" customModule="Temperature_Converter" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="62"/>
+            <point key="canvasLocation" x="399" y="62"/>
         </scene>
     </scenes>
 </document>

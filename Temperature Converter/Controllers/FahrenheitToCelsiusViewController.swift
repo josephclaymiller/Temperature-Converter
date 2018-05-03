@@ -25,6 +25,9 @@ class FahrenheitToCelsiusViewController: UIViewController, UIPickerViewDelegate 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func switchUnitsButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func updateUI(fahrenheit: Int) {
         let celsius = TemperatureModel.toCelsius(fahrenheit: fahrenheit)
