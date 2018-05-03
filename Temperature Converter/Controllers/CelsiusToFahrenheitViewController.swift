@@ -13,12 +13,13 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
     @IBOutlet weak var tempImage: UIImageView!
     @IBOutlet weak var celsiusPicker: UIPickerView!
     @IBOutlet var celsiusViewModel: CelsiusViewModel!
+    var celsius: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let celsius = celsiusViewModel.tempsCelsius[0]
-        updateUI(celsius: celsius)
+        celsius = celsiusViewModel.tempsCelsius[0]
+        updateUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +27,7 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
         // Dispose of any resources that can be recreated.
     }
     
-    func updateUI(celsius: Int) {
+    func updateUI() {
         // set label and image
         let fahrenheit = TemperatureModel.toFahrenheit(celsius: celsius)
         let waterState = TemperatureModel.waterState(celsius: celsius)
@@ -41,18 +42,20 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let celsius = celsiusViewModel.tempsCelsius[row]
-        updateUI(celsius: celsius)
+        celsius = celsiusViewModel.tempsCelsius[row]
+        updateUI()
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let destinationController = segue.destination as? FahrenheitToCelsiusViewController {
+            // TODO: match selected temperature when switching units
+        }
     }
-    */
+
 
 }
