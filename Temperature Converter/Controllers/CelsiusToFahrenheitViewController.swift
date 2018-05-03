@@ -22,11 +22,6 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
         updateUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func updateUI() {
         // set label and image
         let fahrenheit = TemperatureModel.toFahrenheit(celsius: celsius)
@@ -46,6 +41,7 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
         updateUI()
     }
     
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -56,6 +52,6 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
             // TODO: match selected temperature when switching units
         }
     }
-
+     */
 
 }

@@ -13,23 +13,20 @@ class FahrenheitToCelsiusViewController: UIViewController, UIPickerViewDelegate 
     @IBOutlet weak var fahrenheitPicker: UIPickerView!
     @IBOutlet weak var tempImage: UIImageView!
     @IBOutlet var fahrenheitViewModel: FahrenheitViewModel!
+    var fahrenheit: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let fahrenheit = fahrenheitViewModel.tempsFahrenheit[0]
-        updateUI(fahrenheit: fahrenheit)
+        fahrenheit = fahrenheitViewModel.tempsFahrenheit[0]
+        updateUI()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     @IBAction func switchUnitsButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func updateUI(fahrenheit: Int) {
+    func updateUI() {
         let celsius = TemperatureModel.toCelsius(fahrenheit: fahrenheit)
         let waterState = TemperatureModel.waterState(fahrenheit: fahrenheit)
         celsiusLabel.text = String(celsius) + " °C"
@@ -43,8 +40,8 @@ class FahrenheitToCelsiusViewController: UIViewController, UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let fahrenheit = fahrenheitViewModel.tempsFahrenheit[row]
-        updateUI(fahrenheit: fahrenheit)
+        fahrenheit = fahrenheitViewModel.tempsFahrenheit[row]
+        updateUI()
     }
     
 
