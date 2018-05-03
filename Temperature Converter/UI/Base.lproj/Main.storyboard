@@ -38,15 +38,19 @@
                                     <outlet property="delegate" destination="wHi-3y-d44" id="BiO-oP-Swn"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfO-41-e5z">
-                                <rect key="frame" x="112" y="20" width="150" height="57.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celsius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfO-41-e5z">
+                                <rect key="frame" x="20" y="40" width="335" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rfO-41-e5z" firstAttribute="leading" secondItem="GFf-am-c4e" secondAttribute="leading" constant="20" id="ERn-4h-P37"/>
+                            <constraint firstItem="GFf-am-c4e" firstAttribute="trailing" secondItem="rfO-41-e5z" secondAttribute="trailing" constant="20" id="g9u-zz-adS"/>
+                            <constraint firstItem="rfO-41-e5z" firstAttribute="top" secondItem="GFf-am-c4e" secondAttribute="top" constant="20" id="x1V-rQ-Rj9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GFf-am-c4e"/>
                     </view>
                     <connections>
@@ -89,15 +93,19 @@
                                     <outlet property="delegate" destination="55n-hS-uYS" id="sfV-eq-Kwh"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfR-YU-QPN">
-                                <rect key="frame" x="79" y="20" width="216" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfR-YU-QPN">
+                                <rect key="frame" x="20" y="40" width="335" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BZ4-0V-lnd" firstAttribute="trailing" secondItem="CfR-YU-QPN" secondAttribute="trailing" constant="20" id="F7v-CR-za4"/>
+                            <constraint firstItem="CfR-YU-QPN" firstAttribute="top" secondItem="BZ4-0V-lnd" secondAttribute="top" constant="20" id="et4-WN-hwE"/>
+                            <constraint firstItem="CfR-YU-QPN" firstAttribute="leading" secondItem="BZ4-0V-lnd" secondAttribute="leading" constant="20" id="oGa-FD-ouJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BZ4-0V-lnd"/>
                     </view>
                     <connections>
