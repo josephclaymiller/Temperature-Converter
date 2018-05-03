@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		CD9EA3C1209509740061D4ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EA3C0209509740061D4ED /* AppDelegate.swift */; };
-		CD9EA3C3209509740061D4ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EA3C2209509740061D4ED /* ViewController.swift */; };
 		CD9EA3C6209509740061D4ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9EA3C4209509740061D4ED /* Main.storyboard */; };
 		CD9EA3C8209509740061D4ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9EA3C7209509740061D4ED /* Assets.xcassets */; };
 		CD9EA3CB209509740061D4ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9EA3C9209509740061D4ED /* LaunchScreen.storyboard */; };
+		CD9EA3D5209509A80061D4ED /* TemperatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EA3D4209509A80061D4ED /* TemperatureModel.swift */; };
+		CD9EA3D720950D030061D4ED /* CelsiusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EA3D620950D030061D4ED /* CelsiusViewModel.swift */; };
+		CD9EA3D920950D220061D4ED /* FahrenheitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EA3D820950D220061D4ED /* FahrenheitViewModel.swift */; };
+		CDAD52822099390500C7E3C2 /* FahrenheitToCelsiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAD52812099390500C7E3C2 /* FahrenheitToCelsiusViewController.swift */; };
+		CDAE7641209AD02C000A2DAA /* CelsiusToFahrenheitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAE7640209AD02C000A2DAA /* CelsiusToFahrenheitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CD9EA3BD209509740061D4ED /* Temperature Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Temperature Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD9EA3C0209509740061D4ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD9EA3C2209509740061D4ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD9EA3C5209509740061D4ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD9EA3C7209509740061D4ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD9EA3CA209509740061D4ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD9EA3CC209509740061D4ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9EA3D4209509A80061D4ED /* TemperatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureModel.swift; sourceTree = "<group>"; };
+		CD9EA3D620950D030061D4ED /* CelsiusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelsiusViewModel.swift; sourceTree = "<group>"; };
+		CD9EA3D820950D220061D4ED /* FahrenheitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahrenheitViewModel.swift; sourceTree = "<group>"; };
+		CDAD52812099390500C7E3C2 /* FahrenheitToCelsiusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahrenheitToCelsiusViewController.swift; sourceTree = "<group>"; };
+		CDAE7640209AD02C000A2DAA /* CelsiusToFahrenheitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelsiusToFahrenheitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				CD9EA3C0209509740061D4ED /* AppDelegate.swift */,
-				CD9EA3C2209509740061D4ED /* ViewController.swift */,
-				CD9EA3C4209509740061D4ED /* Main.storyboard */,
+				CDF98BEC209AE9FE0019E1AA /* UI */,
+				CDF98BEB209AE9DD0019E1AA /* Model */,
+				CDF98BED209AEA400019E1AA /* Controllers */,
 				CD9EA3C7209509740061D4ED /* Assets.xcassets */,
 				CD9EA3C9209509740061D4ED /* LaunchScreen.storyboard */,
 				CD9EA3CC209509740061D4ED /* Info.plist */,
 			);
 			path = "Temperature Converter";
+			sourceTree = "<group>";
+		};
+		CDF98BEB209AE9DD0019E1AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD9EA3D4209509A80061D4ED /* TemperatureModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CDF98BEC209AE9FE0019E1AA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD9EA3C4209509740061D4ED /* Main.storyboard */,
+				CD9EA3D620950D030061D4ED /* CelsiusViewModel.swift */,
+				CD9EA3D820950D220061D4ED /* FahrenheitViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CDF98BED209AEA400019E1AA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDAE7640209AD02C000A2DAA /* CelsiusToFahrenheitViewController.swift */,
+				CDAD52812099390500C7E3C2 /* FahrenheitToCelsiusViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9EA3C3209509740061D4ED /* ViewController.swift in Sources */,
+				CD9EA3D5209509A80061D4ED /* TemperatureModel.swift in Sources */,
+				CDAE7641209AD02C000A2DAA /* CelsiusToFahrenheitViewController.swift in Sources */,
 				CD9EA3C1209509740061D4ED /* AppDelegate.swift in Sources */,
+				CD9EA3D720950D030061D4ED /* CelsiusViewModel.swift in Sources */,
+				CD9EA3D920950D220061D4ED /* FahrenheitViewModel.swift in Sources */,
+				CDAD52822099390500C7E3C2 /* FahrenheitToCelsiusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

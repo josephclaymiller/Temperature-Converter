@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="55n-hS-uYS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fahrenheit to Celsius-->
+        <scene sceneID="a79-qT-Pn1">
+            <objects>
+                <viewController title="Fahrenheit to Celsius" id="wHi-3y-d44" customClass="FahrenheitToCelsiusViewController" customModule="Temperature_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RBA-E5-sMX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7U9-g0-kfr">
+                                <rect key="frame" x="67" y="98" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko8-jU-f7g">
+                                <rect key="frame" x="146" y="617" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="switch units"/>
+                            </button>
+                            <pickerView contentMode="scaleToFill" horizontalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-bG-Dqc">
+                                <rect key="frame" x="27" y="244" width="320" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="B7K-at-qvs" id="oya-Rw-Scs"/>
+                                    <outlet property="delegate" destination="wHi-3y-d44" id="BiO-oP-Swn"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfO-41-e5z">
+                                <rect key="frame" x="112" y="20" width="150" height="57.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="GFf-am-c4e"/>
+                    </view>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="rfO-41-e5z" id="Fid-Vl-9oY"/>
+                        <outlet property="fahrenheitPicker" destination="c7D-bG-Dqc" id="K1l-eE-KeN"/>
+                        <outlet property="fahrenheitViewModel" destination="B7K-at-qvs" id="7gX-Wv-MZD"/>
+                        <outlet property="tempImage" destination="7U9-g0-kfr" id="hGh-J3-5QP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVT-Gz-379" sceneMemberID="firstResponder"/>
+                <customObject id="B7K-at-qvs" customClass="FahrenheitViewModel" customModule="Temperature_Converter" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="62"/>
+        </scene>
+        <!--Celsius To Fahrenheit-->
+        <scene sceneID="PSG-XB-Gn9">
+            <objects>
+                <viewController title="Celsius To Fahrenheit" id="55n-hS-uYS" customClass="CelsiusToFahrenheitViewController" customModule="Temperature_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="86m-XC-uqd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="668-Tl-tQ3">
+                                <rect key="frame" x="67" y="98" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVF-eV-gIi">
+                                <rect key="frame" x="146" y="617" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="switch units"/>
+                            </button>
+                            <pickerView contentMode="scaleToFill" horizontalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oJX-Rx-3q5">
+                                <rect key="frame" x="27" y="244" width="320" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="k0y-A2-5PK" id="ot2-p8-ICm"/>
+                                    <outlet property="delegate" destination="55n-hS-uYS" id="sfV-eq-Kwh"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfR-YU-QPN">
+                                <rect key="frame" x="79" y="20" width="216" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="BZ4-0V-lnd"/>
+                    </view>
+                    <connections>
+                        <outlet property="celsiusPicker" destination="oJX-Rx-3q5" id="mcL-HQ-Wio"/>
+                        <outlet property="celsiusViewModel" destination="k0y-A2-5PK" id="0Fk-UK-xuz"/>
+                        <outlet property="fahrenheitLabel" destination="CfR-YU-QPN" id="Y5U-fN-2bi"/>
+                        <outlet property="tempImage" destination="668-Tl-tQ3" id="RKu-Tk-ekw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aW0-1N-7If" sceneMemberID="firstResponder"/>
+                <customObject id="k0y-A2-5PK" customClass="CelsiusViewModel" customModule="Temperature_Converter" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="62"/>
+        </scene>
+    </scenes>
+</document>
