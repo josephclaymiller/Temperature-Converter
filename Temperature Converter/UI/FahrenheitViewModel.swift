@@ -32,12 +32,31 @@ class FahrenheitViewModel: NSObject, UIPickerViewDataSource {
         
     }
     
-    // image displayed -- get image string from TemperatureModel?
+    func rowForTemp(fahrenheit: Int) -> Int {
+        let minTemp = tempsFahrenheit[0]
+        let maxTemp = tempsFahrenheit[tempsFahrenheit.count-1]
+        if fahrenheit <= minTemp {
+            return 0
+        }
+        if fahrenheit >= maxTemp {
+            return tempsFahrenheit.count-1
+        }
+        // find fahrenheit in tempsFahrenheit array
+        if tempsFahrenheit.contains(fahrenheit) {
+            return tempsFahrenheit.index(of: fahrenheit)!
+        } else {
+            return rowForTemp(fahrenheit: fahrenheit - fahrenheit % 2)
+        }
+    }
+    
+    // MARK: - Image methods
+    // get image string for selected temp from TemperatureModel
     func getImage(fahrenheit: Int) -> UIImage? {
         let waterStateImageName = TemperatureModel.waterState(celsius: fahrenheit)
         return UIImage(named: waterStateImageName)
     }
     
+    // MARK: - UI Picker Data Source methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

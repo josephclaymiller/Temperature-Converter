@@ -13,24 +13,31 @@ class FahrenheitToCelsiusViewController: UIViewController, UIPickerViewDelegate 
     @IBOutlet weak var fahrenheitPicker: UIPickerView!
     @IBOutlet weak var tempImage: UIImageView!
     @IBOutlet var fahrenheitViewModel: FahrenheitViewModel!
-    var fahrenheit: Int = 0
+    var fahrenheit: Int = 32
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        fahrenheit = fahrenheitViewModel.tempsFahrenheit[0]
         updateUI()
     }
     
     @IBAction func switchUnitsButtonPressed(_ sender: UIButton) {
+         // Match selected temperature when switching units
+        if let celsiusController = self.presentingViewController as? CelsiusToFahrenheitViewController {
+            let celsius = TemperatureModel.toCelsius(fahrenheit: fahrenheit)
+            celsiusController.celsius = celsius
+            celsiusController.updateUI()
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
     func updateUI() {
+        let row = fahrenheitViewModel.rowForTemp(fahrenheit: fahrenheit)
+        fahrenheit = fahrenheitViewModel.tempsFahrenheit[row]
         let celsius = TemperatureModel.toCelsius(fahrenheit: fahrenheit)
         let waterState = TemperatureModel.waterState(fahrenheit: fahrenheit)
         celsiusLabel.text = String(celsius) + " °C"
         tempImage.image = UIImage(named:waterState)
+        fahrenheitPicker.selectRow(row, inComponent: 0, animated: false)
     }
     
     // Mark: - UI Picker View delegate functions
@@ -44,15 +51,4 @@ class FahrenheitToCelsiusViewController: UIViewController, UIPickerViewDelegate 
         updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

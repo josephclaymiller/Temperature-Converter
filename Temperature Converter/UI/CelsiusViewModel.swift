@@ -31,12 +31,31 @@ class CelsiusViewModel: NSObject, UIPickerViewDataSource {
         
     }
     
+    func rowForTemp(celsius: Int) -> Int {
+        let minTemp = tempsCelsius[0]
+        let maxTemp = tempsCelsius[tempsCelsius.count-1]
+        if celsius <= minTemp {
+            return 0
+        }
+        if celsius >= maxTemp {
+            return tempsCelsius.count-1
+        }
+        // find celsius in tempsCelsius array
+        if tempsCelsius.contains(celsius) {
+            return tempsCelsius.index(of: celsius)!
+        } else {
+            return rowForTemp(celsius: celsius - celsius % 5)
+        }
+    }
+    
+    // MARK: - Image methods
+    // get image string for selected temp from TemperatureModel
     func getImage(celsius: Int) -> UIImage? {
         let waterStateImageName = TemperatureModel.waterState(celsius: celsius)
         return UIImage(named: waterStateImageName)
     }
     
-    // UI Picker Data Source methods
+    // MARK: - UI Picker Data Source methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

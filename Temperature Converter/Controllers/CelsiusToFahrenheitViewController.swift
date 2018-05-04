@@ -17,17 +17,17 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        celsius = celsiusViewModel.tempsCelsius[0]
         updateUI()
     }
 
     func updateUI() {
-        // set label and image
+        let row = celsiusViewModel.rowForTemp(celsius: celsius)
+        celsius = celsiusViewModel.tempsCelsius[row]
         let fahrenheit = TemperatureModel.toFahrenheit(celsius: celsius)
         let waterState = TemperatureModel.waterState(celsius: celsius)
         fahrenheitLabel.text = String(fahrenheit) + " °F"
         tempImage.image = UIImage(named:waterState)
+        celsiusPicker.selectRow(row, inComponent: 0, animated: false)
     }
     
     // Mark: - UI Picker View delegate functions
@@ -41,7 +41,7 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
         updateUI()
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -49,9 +49,10 @@ class CelsiusToFahrenheitViewController: UIViewController, UIPickerViewDelegate 
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if let destinationController = segue.destination as? FahrenheitToCelsiusViewController {
-            // TODO: match selected temperature when switching units
+            // Match selected temperature when switching units
+            destinationController.fahrenheit = TemperatureModel.toFahrenheit(celsius: celsius)
         }
     }
-     */
+
 
 }
